@@ -22,7 +22,7 @@ FOLLOWING ARE THE API END POINTS AVAILABLE IN THIS APPLICATION
 
 STEPS TO RUN WITHOUT DOCKER
 
-1. Clone the repo: https://github.com/ashwinit016/Literate-System.git
+1. Clone the repo: https://github.com/AshwiniT01/Literate-System.git
 2. Change into the directory
 3. Run: npm install
 4. Run: npm start
