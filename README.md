@@ -29,7 +29,7 @@ STEPS TO RUN WITHOUT DOCKER
 
 STEPS TO RUN ON DOCKER
 
-1. Run: docker run cchu016/mymean_cf_dockerization
+1. Run: docker run acchu016/mymean_cf_dockerization
 2. Open "http://<replace with The ip address that your docker is configured with>:8080"
 
 URL LINK HOSTED USING PIVOTAL CLOUD FOUNDRY:
