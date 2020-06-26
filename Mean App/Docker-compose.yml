@@ -1,0 +1,18 @@
+version: "3"
+services:
+  app:
+    container_name: docker-mean
+    restart: always
+    build:
+      context: .
+      dockerfile: DockerFile
+    image: 90211234/mymean
+    ports:
+      - "8080:8080"
+    links:
+      - mongodb
+  mongodb:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27017:27017"

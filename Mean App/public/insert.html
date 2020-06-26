@@ -1,0 +1,83 @@
+<html>
+<head>
+	<script src="angular/angular.min.js"> </script>
+	<link href="main.css" rel="stylesheet" 	type="text/css">
+</head>
+<script> var myModule = angular.module("myApp",[])  </script>
+<body ng-app="myApp">
+    <div id="container">
+		<div id="banner">
+		<span><a href="index.html"><b>HOME</b></a></span>&emsp;&emsp;
+		<span><a href="about.html"><b>ABOUT</b></a></span>&emsp;&emsp;
+		<span><a href="insert.html"><b>INSERT</b></a></span>&emsp;&emsp;
+		<span><a href="update.html"><b>UPDATE</b></a></span>&emsp;&emsp;
+		<span><a href="search.html"><b>SEARCH</b></a></span>&emsp;&emsp;
+		<span><a href="delete.html"><b>DELETE</b></a></span>&emsp;&emsp;
+		<span><a href="/display"><b>DISPLAY</b></a></span>&emsp;		 
+		</div>
+	</div>
+	
+	<div class="col2-image">
+		<div class="col2-text">
+			<form ng-controller='appController' ng-submit="send()">
+      <!--send() function from the controller is called on form submission -->
+     
+		<label for="clgcode">College Code:</label>
+            <input type="text" id="clgcode" name="clgcode" ng-model="data.clgcode" /> <br /><br/>
+		<label for="clgname">College Name:</label>
+            <input type="text" id="clgname" name="clgname" ng-model="data.clgname" /> <br /> <br /> 
+        <label for="clgtype" >College type:</label>
+            <input type="text" id="clgtype" name="clgtype" ng-model="data.clgtype" placeholder="Commerce/Engg/ Medical/ Mgmt"/> <br/><br/>
+		<label for="course" >Courses offered:</label>
+            <input type="text" id="course" name="course" ng-model="data.course" placeholder="B.Com/B.E./B.Arch/ MBBS/MBA"/> <br /><br/>
+        <label for="address" >Address:</label>
+           <input type="text" id="address" name="address" ng-model="data.address" /> <br /><br/>
+		<label for="phone">Phone No.:     </label>
+			<input type="tel" id="phone" name="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required ng-model="data.phone" /><br/><br/>
+		<label for="email">Email id:     </label>
+			<input type="email" id="email" name="email" ng-model="data.email" placeholder="abc@abc.com"/> <br/><br/>
+		<input type="submit" ng-click="Submit">
+		
+		<div><pre>{{response.data}}</pre>  </div>
+    </form>
+ 
+ 
+	<a href="index.html"><h2>Back</h2></a>
+		</div>
+</div>
+	
+	
+     <script>
+	 myModule.controller ("appController",
+        function appController($scope, $http) {
+            /*$http directive is used to communicate to the server */
+            $scope.data = {}
+            $scope.response = {}
+			
+            $scope.send = function () {
+                /*executed when submit is clicked*/          
+				console.log($scope.data.clgname);
+                var posting = $http({
+			/*posting to /process_get  */
+                    //method: 'GET',
+                    //url: '/process_get',
+                    //params: $scope.data,
+			/*posting to /process_post*/
+                    method: 'POST',
+                    url: '/process_post',
+                    data: $scope.data,
+                    
+                }).then (function (response) {
+                    /*executed when server responds back*/
+                    console.log(response);
+                    $scope.response.data = response.data;
+                },function (error){
+					console.log(error);
+			});
+            }
+        });
+    </script>
+</body>
+</html>
+
+ 

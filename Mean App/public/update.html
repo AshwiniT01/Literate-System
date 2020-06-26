@@ -1,0 +1,37 @@
+<html> 
+<head>
+	<link href="main.css" rel="stylesheet" 	type="text/css">
+</head>
+<body>
+    <div id="container">
+		<div id="banner">
+		<span><a href="index.html"><b>HOME</b></a></span>&emsp;&emsp;
+		<span><a href="about.html"><b>ABOUT</b></a></span>&emsp;&emsp;
+		<span><a href="insert.html"><b>INSERT</b></a></span>&emsp;&emsp;
+		<span><a href="update.html"><b>UPDATE</b></a></span>&emsp;&emsp;
+		<span><a href="search.html"><b>SEARCH</b></a></span>&emsp;&emsp;
+		<span><a href="delete.html"><b>DELETE</b></a></span>&emsp;&emsp;
+		<span><a href="/display"><b>DISPLAY</b></a></span>&emsp;		 
+		</div>
+	</div>
+	<div class="col2-image">
+		<div class="col2-text">
+		<form action="update" method="get">  
+		<h1>Update College Details</h1>
+		College Code: <input type="text" name="clgcode" id="clgcode" /> <br /><br/>
+		College Name: <input type="text" name="clgname" id="clgname" /> <br /> <br /> 
+        College type: <input type="text" name="clgtype" id="clgtype" placeholder="Commerce/Engg/ Medical/ Mgmt"/> <br/><br/>
+		Courses offered: <input type="text" name="course"  id="course" placeholder="B.Com/B.E./B.Arch/ MBBS/MBA"/> <br /><br/>
+        Address: <input type="text" name="address" id="address" /> <br /><br/>
+		Phone No.: <input type="tel" name="phone" id="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required /><br/><br/>
+		Email id:  <input type="email" name="email" id="email" placeholder="abc@abc.com"/> <br/><br/>
+		
+ 
+<input type="submit" value="Submit">  
+</form>  
+<a href="/index.html">Back</a>
+</div>
+	</div>
+
+</body>  
+</html> 

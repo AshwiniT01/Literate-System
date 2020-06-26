@@ -1,0 +1,16 @@
+<b><h1>List of Colleges</h1></b>
+  <body background = "col4.jpg" height=500>
+  <ul class="college">
+  <% for(var i=0; i<college.length; i++) {%>
+    <li class="college">
+      <span><%= " College Code: " +college[i].clgcode+"."%></span><br/>
+      <span><%=" College Name: " +college[i].clgname%></span><br/>
+	  <span><%=" College Type: " +college[i].clgtype%></span><br/>
+	  <span><%=" Courses offered: " +college[i].course%></span><br/>
+	  <span><%=" Address: " +college[i].address%></span><br/>
+	  <span><%=" Ph No: " +college[i].phone%></span><br/>
+	  <span><%=" Email: " +college[i].email%></span><br/><br/>
+    </li>
+  <% } %>
+</ul>
+</body>
